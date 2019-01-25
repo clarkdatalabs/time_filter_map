@@ -1,0 +1,64 @@
+
+<!-- to render map: enter the following into the command prompt:
+python3 -m http.server
+
+then, direct to the following on your browser:
+http://localhost:8000/
+ -->
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Redacted</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" media="screen, print" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css" />
+
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+    <script type='text/javascript' src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js'></script>
+    <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js'></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+
+
+    <!-- Time range slider -->
+    <link rel="stylesheet" href="forSlider/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="forSlider/jquery-ui.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+</head>
+
+
+<body>
+
+    <!-- time range slider -->
+    <div class="sliderDiv" >
+        <p>
+            <label for="amount">Time range for Accommodations:</label>
+            <input class="sliderValue" type="text" id="amount" >
+        </p>
+        <div id="slider-range"></div>
+    </div>
+
+    <hr>
+
+    <!-- Title -->
+    <h1>A few random locations in Ann Arbor<h1>
+    <h3>1992 - 2019</h3>
+
+    <!-- MAP -->
+    <div id="map"></div>
+
+    <!-- Manipulate the MAP -->
+    <script type='text/javascript' src='script.js'></script>
+
+</body>
