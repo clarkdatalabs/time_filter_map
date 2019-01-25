@@ -3,7 +3,14 @@
         const geoJsonURL = "data/geoData.geojson";
 
     // Initial center of the map in terms of longitude and latitude
-        const geoCenter = [42.2718, -83.7436];
+        const geoCenter = [42.15, -83.7436];
+
+    // Determine initial range of area shown on map (zoom closer when the number is higher)
+        const zoomLevel = 11;
+
+    // Start and End year of the dataset
+        const baseStartYear = 1992;
+        const baseEndYear = 2019;
 
     //Markers & Clusters
         // The color of the markers, used in function customizeMarker()
@@ -13,64 +20,65 @@
         // Specify the color of the marker cluster in css under the class name, used in Function initialMarkerClusters()
             const clusterColorClass = 'marker-cluster-color';
 
+    // Check line 170-174 to customize the information on tooltip for your data
+
 
 
 // Slider
     $( function() {
         // config opaque slider
-        $( "#slider-opaque" ).slider({
-            range: false,
-            min: 0,
-            max: 1,
-            step: 0.1,
-            value: 1,
+            $( "#slider-opaque" ).slider({
+                range: false,
+                min: 0,
+                max: 1,
+                step: 0.1,
+                value: 1,
+                slide: function( event, ui ) {
+                    let opaque = ui.value;
 
-            slide: function( event, ui ) {
-                let opaque = ui.value;
+                    $( "#opacity" ).val( opaque );
+                    a2_1916_02.setOpacity(opaque);
+                }
+            });
 
-                $( "#opacity" ).val( opaque );
-                a2_1916_02.setOpacity(opaque);
-            }
-        });
-        //initial display
-        $( "#opacity" ).val("1");
+        // initial display
+            $( "#opacity" ).val("1");
 
 
         // config time range slider
-        $( "#slider-range" ).slider({
-            range: true,
-            min: 1853, //change to year 1853
-            max: 1973, //change to year 1973
-            values: [ 1853, 1973 ], //change to year 1853 - 1973
+            $( "#slider-range" ).slider({
+                range: true,
+                min: baseStartYear,
+                max: baseEndYear,
+                values: [ baseStartYear, baseEndYear],
 
-            // Every time slider is slided, the map should be refreshed
-            slide: function( event, ui ) {
+                // Every time slider is slided, the map should be refreshed
+                    slide: function( event, ui ) {
+                        var newGeoJson = {
+                            "type" : "Feature Collection",
+                            "features": []
+                        };
+                        let startYear = ui.values[ 0 ];
+                        let endYear = ui.values[ 1 ];
 
-                var newGeoJson = {
-                    "type" : "Feature Collection",
-                    "features": []
-                };
-                let startYear = ui.values[ 0 ];
-                let endYear = ui.values[ 1 ];
+                        $( "#amount" ).val( startYear + " - " + endYear );
 
-                $( "#amount" ).val( startYear + " - " + endYear );
-
-                $.getJSON(geoJsonURL, function(data){
-                    let GEOJSON  = data;
-                    for (let i = 0; i < GEOJSON["features"].length; i++){
-                        if (GEOJSON["features"][i]["properties"]["Date"] >= startYear && GEOJSON["features"][i]["properties"]["Date"] <= endYear) {  // will change "id" to "year"
-                            newGeoJson["features"].push(GEOJSON["features"][i])
-                        }
+                        $.getJSON(geoJsonURL, function(data){
+                            let GEOJSON  = data;
+                            for (let i = 0; i < GEOJSON["features"].length; i++){
+                                if (GEOJSON["features"][i]["properties"]["Date"] >= startYear && GEOJSON["features"][i]["properties"]["Date"] <= endYear) {  // will change "id" to "year"
+                                    newGeoJson["features"].push(GEOJSON["features"][i])
+                                }
+                            }
+                            renderPinsFromJson(something_markers,newGeoJson);
+                        });
                     }
-                    renderPinsFromJson(accommodation_markers,newGeoJson);
-                });
-            }
-        });
+            });
         //initial display
-        $( "#amount" ).val(
-             $( "#slider-range" ).slider( "values", 0 ) + " - " + $( "#slider-range" ).slider( "values", 1 )
-        );
-            } );
+            $( "#amount" ).val(
+                 $( "#slider-range" ).slider( "values", 0 ) + " - " + $( "#slider-range" ).slider( "values", 1 )
+            );
+    });
 
 
 // RENDER THE MAP
@@ -84,13 +92,13 @@
         });
 
     // Initial zoom and center in the map
-        map.setView(geoCenter, 14);
+        map.setView(geoCenter, zoomLevel);
 
     // Set markers & clusters on the map
-        var accommodation_markers = initialMarkerClusters();
+        var something_markers = initialMarkerClusters();
 
     // Get the initial Markers
-        renderPinsFromURL(accommodation_markers, geoJsonURL);
+        renderPinsFromURL(something_markers, geoJsonURL);
 
 
 
@@ -161,10 +169,12 @@
             var customizedIcon = customizeMarker();
             var geojson = L.geoJson(
                                 geoJson,
-                                {
-                                    onEachFeature: function(feature,layer){
-                                        layer.bindPopup("<b>Address:  </b>" + feature.properties.address + "<br>" + "<b>No. of Students:  </b>" + feature.properties.Count);
-                                    },
+                                {   // Information shown in tooltip
+                                        onEachFeature: function(feature,layer){
+                                            layer.bindPopup(
+                                                "<b>Address:  </b>" + feature.properties.address + "<br>" +
+                                                "<b>No. of Students:  </b>" + feature.properties.Count);
+                                        },
                                     pointToLayer: function (feature, latlng) {
                                         return L.marker(latlng, {icon: customizedIcon});
                                     }
