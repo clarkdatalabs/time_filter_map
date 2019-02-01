@@ -2,6 +2,7 @@
 >by Julie Cruz, Rheagan Martin, Jordan Earnest, Lihan (Neil) Zhu
 
 [!["example outcome"](https://github.com/clarkdatalabs/time_filter_map/blob/master/img/Final1.png )](https://clarkdatalabs.github.io/time_filter_map/MapSite)
+
 ___
 
 ## Introduction
@@ -9,12 +10,12 @@ A client of ours had a set of data about the accommodation information of a grou
 
 Our client was satisfied with our final outcome. Due to NDA, the original project is not supposed to be shared by us. However, we find its core function, the map with time filter, has a lot of potentials for scalability. In addition, although there are existing examples of either Leaflet Map or Range Selector, few of them applying the selector to maps exist. 
 
-Therefore, we have modified the project to share the core function as an example while not showing any confidential information.
+Therefore, we have modified the project to share the core function as an handy example while not showing any confidential information.
 
 ## Check the Example Map
-
+Following the steps below, you can easily run a map with a time filter on your local server, and further customize it as your will.
 #### Download the Code
-
+[Download]()
 #### Run on the Local Server
 
 
