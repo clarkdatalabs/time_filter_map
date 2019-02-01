@@ -1,7 +1,7 @@
 
 >by Julie Cruz, Rheagan Martin, Jordan Earnest, Lihan (Neil) Zhu
 
-[!["example outcome"](https://github.com/clarkdatalabs/time_filter_map/blob/master/img/Final1.png )](http://0.0.0.0:8000/)
+[!["example outcome"](https://github.com/clarkdatalabs/time_filter_map/blob/master/img/Final1.png )](https://clarkdatalabs.github.io/time_filter_map/)
 ___
 
 ## Introduction
