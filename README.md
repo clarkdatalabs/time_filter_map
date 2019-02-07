@@ -121,7 +121,7 @@ It starts at the begining of the file.
             const clusterColorClass = 'marker-cluster-color';
 ```
 ##### 3.2 Popup(Tooltip) Setup
-It is at the Line 173
+It is at the Line 173.
 ```
 ...
 onEachFeature: function(feature,layer){
