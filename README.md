@@ -6,7 +6,7 @@
 ___
 
 ## Introduction
-A client of ours had a set of data about the accommodation information of a group of UMich students in Ann Arbor for decades, and they wanted the information to be visualized so that the audience have a straight-forward understanding of "**During When**, **How many** students live **Where**."
+A client of ours had data about the residential information of a group of UMich students in Ann Arbor for decades, and they wanted the information to be visualized so that the audience have a straight-forward understanding of "**During When**, **How many** students live **Where**."
 
 Our client was satisfied with our final outcome. Due to NDA, the original project is not supposed to be shared by us. However, we find its core function, the map with time filter, has a lot of potentials for scalability. In addition, although there are existing examples of either Leaflet Map or Range Selector, few of them applying the selector to maps exist. 
 
