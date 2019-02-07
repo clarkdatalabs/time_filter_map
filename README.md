@@ -29,8 +29,8 @@ Unzip the file and you will get a folder named "MapSite" with following folders/
 
 Typically, you'd be able to right click on the index.html file and open it with a web browser to render the webpage. If you try this, you'll likely notice that D3 doesn't render. This is because we need a server to run D3:
 
-1. Open your terminal(Mac) or Command Prompt(Windows).
-2. Cd into the dir your html is currently at. For example: `cd Desktop/MapSite`
+1. Open your terminal (Mac) or Command Prompt (Windows).
+2. Cd into the dir your html is currently in. For example: `cd Desktop/MapSite`
 3. Enter:`python -m SimpleHTTPServer 8000` or `python3 -m http.server`
 
 Now you&#39;re ready to render the HTML files. Click on [local host](http://localhost:8000) to have a look. 
