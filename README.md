@@ -65,9 +65,9 @@ The most important thing here is the information about "coordinates", under "geo
 When the GEOJSON file is done, put it in the "data" folder.
 
 #### 2. Updates in HTML
-There are a few places in the file "index.html" you may want to modify.
+There are a few places in the file "index.html" you may want to modify:
 ##### 2.1 Head Title
-It is at the Line 12 in the sample code.
+Starting at Line 12 in the sample code.
 ```
 <head>
   ...
@@ -76,7 +76,7 @@ It is at the Line 12 in the sample code.
 </head>
 ```
 ##### 2.2 Time Range Slider Label
-It starts at the Line 44 in the sample code. 
+Starting at Line 44 in the sample code. 
 ```
     <div class="sliderDiv" >
         <p>
@@ -87,7 +87,7 @@ It starts at the Line 44 in the sample code.
     </div>
 ```
 ##### 2.3 Title
-It starts at the Line 55 in the sample code. 
+Starting at Line 55 in the sample code. 
 ```
     <h1>A few random locations in Ann Arbor</h1>
     <h3>1992 - 2019</h3>
@@ -96,7 +96,7 @@ It starts at the Line 55 in the sample code.
 #### 3. Updates in JS
 There are some critical parameters can be modified in file "script.js".
 ##### 3.1 Basic Parameters
-It starts at the begining of the sample code.
+Starting at the begining of the sample code.
 ```javascript
 // Set the parameters
     // The Geojson data you have in your folder
@@ -105,7 +105,7 @@ It starts at the begining of the sample code.
     // Initial center of the map in terms of longitude and latitude
         const geoCenter = [42.15, -83.7436];
 
-    // Determine initial range of area shown on map (zoom closer when the number is higher)
+    // Determine initial range of area shown on map (zooms closer when the number is higher)
         const zoomLevel = 11;
 
     // Start and End year of the dataset
@@ -121,7 +121,7 @@ It starts at the begining of the sample code.
             const clusterColorClass = 'marker-cluster-color';
 ```
 ##### 3.2 Popup(Tooltip) Setup
-It is at the Line 173 in the sample code.
+Starting at Line 173 in the sample code.
 ```javascript
 ...
 onEachFeature: function(feature,layer){
