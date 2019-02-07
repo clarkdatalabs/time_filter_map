@@ -44,11 +44,11 @@ The sample project works for datasets with information about Latitude/Longitude 
   "features":[
     {
       "type": "Feature",
-      // All data that are either about the year or other stuff needed shown on the map
+      // All informational data needed other than coordinates
       "properties": {
-        "Date": "1992",
-        "address": "2nd St.",
-        "Count": "1"
+        "Date": "1992", // associate with the slider
+        "address": "2nd St.", // associate with tooltips
+        "Count": "1" // associate with mark clusters and tooltips
       },
       // Keep the data of lat/lon here
       "geometry": {
@@ -60,9 +60,36 @@ The sample project works for datasets with information about Latitude/Longitude 
   ]
 }
 ```
-The most important thing here, as you may already know, is the information about 
+The most important thing here, as you may already know, is the information about "coordinates" under "geometry". But be sure to have other needed information input inside "properties".
 
 #### 2. Updates in HTML
+There're a few places in index.html where you may want to modify.
+##### 2.1 Head Title
+It is at the Line 12 in the sample code.
+```
+<head>
+  ...
+  <title>Time-filter Map</title>
+  ...
+</head>
+```
+##### 2.2 Time Range Slider Label
+It starts at the Line 44 in the sample code. 
+```
+    <div class="sliderDiv" >
+        <p>
+            <label for="amount">Time range for Something:</label>
+            ...
+        </p>
+        ...
+    </div>
+```
+##### 2.3 Title
+It starts at the Line 55 in the sample code. 
+```
+    <h1>A few random locations in Ann Arbor</h1>
+    <h3>1992 - 2019</h3>
+```
 
 #### 3. Updates in JS
 ##### 3.1 Basic Parameters
