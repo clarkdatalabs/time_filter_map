@@ -120,9 +120,9 @@
                                       `
             var icon = L.divIcon({
                                       className: "my-custom-pin",
-                                      iconAnchor: [0, 24],
-                                      labelAnchor: [-6, 0],
-                                      popupAnchor: [0, -36],
+                                      iconAnchor: [10, 5],
+                                      labelAnchor: [0, 0],
+                                      popupAnchor: [10, -12],
                                       html: `<span style="${markerNarrativeHtmlStyles}" />`
                                     })
             return icon;
