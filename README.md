@@ -62,8 +62,10 @@ The sample project works for datasets with information about Latitude/Longitude 
 ```
 The most important thing here, as you may already know, is the information about "coordinates" under "geometry". But be sure to have other needed information input inside "properties".
 
+When the GEOJSON file is done, put it in the folder "data".
+
 #### 2. Updates in HTML
-There're a few places in index.html where you may want to modify.
+There're a few places in file "index.html" where you may want to modify.
 ##### 2.1 Head Title
 It is at the Line 12 in the sample code.
 ```
@@ -92,7 +94,40 @@ It starts at the Line 55 in the sample code.
 ```
 
 #### 3. Updates in JS
+There are some critical parameters can be modified in file "script.js".
 ##### 3.1 Basic Parameters
+It starts at the begining of the file.
+```javascript
+// Set the parameters
+    // The Geojson data you have in your folder
+        const geoJsonURL = "data/geoData.geojson";
 
-##### 3.2 Popup Setup
+    // Initial center of the map in terms of longitude and latitude
+        const geoCenter = [42.15, -83.7436];
 
+    // Determine initial range of area shown on map (zoom closer when the number is higher)
+        const zoomLevel = 11;
+
+    // Start and End year of the dataset
+        const baseStartYear = 1992;
+        const baseEndYear = 2019;
+
+    //Markers & Clusters
+        // The color of the markers, used in function customizeMarker()
+            const markColor = '#4E91BE';
+        // Determine the threshold of distance that cluster multiple markers, used in Function initialMarkerClusters()
+            const maxClusterRadius = 120;
+        // Specify the color of the marker cluster in css under the class name, used in Function initialMarkerClusters()
+            const clusterColorClass = 'marker-cluster-color';
+```
+##### 3.2 Popup(Tooltip) Setup
+It is at the Line 173
+```
+...
+onEachFeature: function(feature,layer){
+                                        layer.bindPopup(
+                                            "<b>Address:  </b>" + feature.properties.address + "<br>" +
+                                            "<b>No. of Students:  </b>" + feature.properties.Count);
+                                        },
+...
+```
