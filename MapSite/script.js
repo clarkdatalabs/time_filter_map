@@ -122,7 +122,7 @@
                                       className: "my-custom-pin",
                                       iconAnchor: [10, 5],
                                       labelAnchor: [0, 0],
-                                      popupAnchor: [10, -12],
+                                      popupAnchor: [0, -18],
                                       html: `<span style="${markerNarrativeHtmlStyles}" />`
                                     })
             return icon;
