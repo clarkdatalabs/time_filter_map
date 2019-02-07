@@ -37,7 +37,7 @@ Now you&#39;re ready to render the HTML files. Click on [local host](http://loca
 
 ## Customize for Your Data
 #### 1. Prepare Your GEOJSON File
-The sample project works for datasets with information about Latitude/Longitude and year (in the format of stringfied integer). The sample dataset looks like:
+The sample project works for datasets with information about Latitude/Longitude and year (in stringified integer format). The sample dataset looks like:
 ```javascript
 {
   "type": "FeatureCollection", 
@@ -60,12 +60,12 @@ The sample project works for datasets with information about Latitude/Longitude 
   ]
 }
 ```
-The most important thing here, as you may already know, is the information about "coordinates" under "geometry". But be sure to have other needed information input inside "properties".
+The most important thing here, as you may already know, is the information about "coordinates", under "geometry". But be sure to have other needed information inside "properties".
 
-When the GEOJSON file is done, put it in the folder "data".
+When the GEOJSON file is done, put it in the "data" folder.
 
 #### 2. Updates in HTML
-There're a few places in file "index.html" where you may want to modify.
+There are a few places in the file "index.html" you may want to modify.
 ##### 2.1 Head Title
 It is at the Line 12 in the sample code.
 ```
