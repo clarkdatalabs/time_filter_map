@@ -60,7 +60,7 @@ The sample project works for datasets with information about Latitude/Longitude 
   ]
 }
 ```
-The most important thing here, as you may already know, is the information about "coordinates", under "geometry". But be sure to have other needed information inside "properties".
+The most important thing here is the information about "coordinates", under "geometry". But be sure to have any other needed information inside "properties".
 
 When the GEOJSON file is done, put it in the "data" folder.
 
