@@ -36,3 +36,34 @@ Typically, you'd be able to right click on the index.html file and open it with 
 Now you&#39;re ready to render the HTML files. Click on [local host](http://localhost:8000) to have a look. 
 
 ## Customize for Your Data
+#### 1. Prepare Your GEOJSON File
+The sample project works for datasets with information about Latitude/Longitude and year (in the format of stringfied integer). The sample dataset looks like:
+```javascript
+{
+  "type": "FeatureCollection", 
+  "features":[
+    {
+      "type": "Feature",
+      // All data that are either about the year or other stuff needed shown on the map
+      "properties": {
+        "Date": "1992",
+        "address": "2nd St.",
+        "Count": "1"
+      },
+      // Keep the data of lat/lon here
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.755607,42.275139]
+      }
+    },
+    ...
+  ]
+}
+```
+#### 2. Updates in HTML
+
+#### 3. Updates in JS
+##### 3.1 Basic Parameters
+
+##### 3.2 Popup Setup
+
