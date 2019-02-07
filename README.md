@@ -96,7 +96,7 @@ It starts at the Line 55 in the sample code.
 #### 3. Updates in JS
 There are some critical parameters can be modified in file "script.js".
 ##### 3.1 Basic Parameters
-It starts at the begining of the file.
+It starts at the begining of the sample code.
 ```javascript
 // Set the parameters
     // The Geojson data you have in your folder
@@ -121,8 +121,8 @@ It starts at the begining of the file.
             const clusterColorClass = 'marker-cluster-color';
 ```
 ##### 3.2 Popup(Tooltip) Setup
-It is at the Line 173.
-```
+It is at the Line 173 in the sample code.
+```javascript
 ...
 onEachFeature: function(feature,layer){
                                         layer.bindPopup(
