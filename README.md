@@ -60,6 +60,8 @@ The sample project works for datasets with information about Latitude/Longitude 
   ]
 }
 ```
+The most important thing here, as you may already know, is the information about 
+
 #### 2. Updates in HTML
 
 #### 3. Updates in JS
