@@ -1,9 +1,9 @@
 
 >by Julie Cruz, Rheagan Martin, Jordan Earnest, Lihan (Neil) Zhu
 
-###### Click the cover image to check how the sample works
 
 [!["example outcome"](https://raw.githubusercontent.com/clarkdatalabs/time_filter_map/master/img/Final1.png )](https://clarkdatalabs.github.io/time_filter_map/MapSite)
+###### Click the cover image to check how the sample works
 
 ___
 
