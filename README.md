@@ -1,6 +1,7 @@
 
 >by Julie Cruz, Rheagan Martin, Jordan Earnest, Lihan (Neil) Zhu
 
+######Click the cover image to check how the sample works
 [!["example outcome"](https://raw.githubusercontent.com/clarkdatalabs/time_filter_map/master/img/Final1.png )](https://clarkdatalabs.github.io/time_filter_map/MapSite)
 
 ___
@@ -60,7 +61,7 @@ The sample project works for datasets with information about Latitude/Longitude 
   ]
 }
 ```
-The most important thing here is the information about "coordinates", under "geometry". But be sure to have any other needed information inside "properties".
+The most important thing here is the information about "coordinates", under "geometry". But be sure to have any other needed information inside "properties". There are many useful resources like this [intuitive "GEOJSON generator"](http://geojson.io/#map=2/20.0/0.0) that can easily translate your data into GEOJSON.
 
 When the GEOJSON file is done, put it in the "data" folder.
 
